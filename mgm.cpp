@@ -65,14 +65,14 @@ int main(int argc, char* argv[]) {
     setlocale(LC_ALL, "Russian");
     srand(time(nullptr));
     if (argc!= 2) {
-        throw std::invalid_argument("Неверное количество аргументов. Ожидается один аргумент - размер лабиринта.");
+        throw std::invalid_argument("Incorrect arguments count!");
     }
 
     int dim;
     try {
         dim = std::stoi(argv[1]);
         if (dim <= 0) {
-            throw std::invalid_argument("Размер лабиринта должен быть положительным.");
+            throw std::invalid_argument("Incorrect size!");
         }
     } catch (const std::invalid_argument& e) {
         std::cerr << e.what() << '\n';
